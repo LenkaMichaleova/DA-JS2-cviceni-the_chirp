@@ -1,0 +1,48 @@
+.post {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.post__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.post__user {
+  flex: 1;
+}
+
+.post__avatar {
+  width: 3rem;
+  height: 3rem;
+  background-size: cover;
+  border: 2px solid lightgray;
+  border-radius: 50%;
+}
+
+.post__body {
+  flex: 1;
+}
+
+.post__head h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.post__text {
+  margin: 0.5rem 0;
+}
+
+.post__handle {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin: 0;
+  text-decoration: none;
+}
+
+.post__handle:hover {
+  text-decoration: underline;
+}
