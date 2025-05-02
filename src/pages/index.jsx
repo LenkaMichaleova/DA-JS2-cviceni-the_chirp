@@ -54,16 +54,14 @@ document.querySelectorAll(".delete-btn").forEach((btn) => {
   });
 });
 
-// ----- POST (create - C) ----- //
+// ----- POST (create - C) ----- //  +   // ------ PUT (update - U) ---- //
 //přihlášený uživatel, za kterého postujeme, je definován nahoře hned za importy -- nafejkovaný\
 document.querySelector(".post-form").addEventListener("submit", async (e)=> {
   e.preventDefault()
   
   const text = document.querySelector(".post-input").value
   
-  if (editedPost !== null) {
-    console.log("edituju vole")
-    
+  if (editedPost !== null) {    
     await fetch(`http://localhost:4000/api/posts/${editedPost.id}`, 
       {
         headers: {
@@ -80,7 +78,6 @@ document.querySelector(".post-form").addEventListener("submit", async (e)=> {
         }),
       }
     );
-
   } else {
     await fetch(`http://localhost:4000/api/posts`,
       {
@@ -102,7 +99,6 @@ document.querySelector(".post-form").addEventListener("submit", async (e)=> {
   window.location.reload()
 });
 
-
 // ------ EDIT (update - U) ---- //
 document.querySelectorAll(".edit-btn").forEach((btn) => {
   btn.addEventListener("click", async () => {
@@ -113,5 +109,3 @@ document.querySelectorAll(".edit-btn").forEach((btn) => {
     editedPost = post
   });
 });
-
-// ------ PUT (read - R) ----- //
